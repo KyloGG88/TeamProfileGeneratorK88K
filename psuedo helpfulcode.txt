@@ -1,0 +1,88 @@
+const team = [];
+
+const questions = [
+  {
+    type: 'input',
+    name: 'tvShow',
+    message: "What's your favorite TV show?",
+  },
+  {
+    type: 'confirm',
+    name: 'askAgain',
+    message: 'Want to enter another TV show favorite (just hit enter for YES)?',
+    default: true,
+  },
+];
+
+function ask() {
+  inquirer.prompt(questions).then((answers) => {
+    output.push(answers.tvShow);
+    if (answers.askAgain) {
+      ask();
+    } else {
+      console.log('Your favorite TV Shows:', output.join(', '));
+    }
+  });
+}
+
+ask();
+
+// TODO: Write Code to gather information about the development team members, and render the HTML file.
+
+const engineer = { name: 'engineer', id: 1, email: 'engineer@email.com', github: "Engineer" };
+
+const engineerClass = new Engineer(engineer.name, engineer.id, engineer.email, engineer.github);
+
+
+render(engineerClass);
+
+// filter requires an Array
+
+
+1 pass the tests(build class structures)
+2 work with the class structure to create the employee Objects 
+3 generate html
+
+
+const Intern = require("../lib/Intern");
+
+Intern Logic
+test("Can set school via constructor", () => {
+  const testValue = "UCLA";
+  const e = new Intern("Foo", 1, "test@test.com", testValue);
+  expect(e.school).toBe(testValue);
+});
+
+test("getRole() should return \"Intern\"", () => {
+  const testValue = "Intern";
+  const e = new Intern("Foo", 1, "test@test.com", "UCLA");
+  expect(e.getRole()).toBe(testValue);
+});
+
+test("Can get school via getSchool()", () => {
+  const testValue = "UCLA";
+  const e = new Intern("Foo", 1, "test@test.com", testValue);
+  expect(e.getSchool()).toBe(testValue);
+});
+
+Manager Logic
+const Manager = require("../lib/Manager");
+const Employee = require("../lib/Employee");
+
+test("Can set office number via constructor argument", () => {
+  const testValue = 100;
+  const e = new Manager("Foo", 1, "test@test.com", testValue);
+  expect(e.officeNumber).toBe(testValue);
+});
+
+test('getRole() should return "Manager"', () => {
+  const testValue = "Manager";
+  const e = new Manager("Foo", 1, "test@test.com", 100);
+  expect(e.getRole()).toBe(testValue);
+});
+
+test("Can get office number via getOffice()", () => {
+  const testValue = 100;
+  const e = new Manager("Foo", 1, "test@test.com", testValue);
+  expect(e.getOfficeNumber()).toBe(testValue);
+});
