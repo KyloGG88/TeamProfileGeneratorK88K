@@ -9,7 +9,7 @@ const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./src/page-template.js");
-const { ObjectUnsubscribedError } = require("rxjs");
+const { default: generate } = require("@babel/generator");
 
 const team = [];
 
@@ -94,49 +94,67 @@ const InternQuestions = [
   }
 ];
 
+// ask for managers details first
 
+inquirer.prompt(managerQuestions).then((managerAnswers) => {
 
-// asking questions function
-// function ask() {
-//   inquirer.prompt(questions).then((answers) => {
-//     output.push(answers.tvShow);
-//     if (answers.askAgain) {
-//       ask();
-//     } else {
-//       console.log('Your favorite TV Shows:', output.join(', '));
-//     }
-//   });
-// }
+  // push manager to team array
+  let manager = new Manager(managerAnswers.name, managerAnswers.id, managerAnswers.email, managerAnswers.officeNumber);
+  team.push(manager);
 
-// ask();
+  //ask which team member user would like to add next
+  askNext(team)
+})
 
-// Steve Calla Code
+function askNext(team) {
 
-//HOW TO USE THE EMPLOYEE AND ENGINEER CLASS
+  inquirer.prompt([
+      {
+          type: "list",
+          name: "role",
+          message: "Which team member would you like to add next?",
+          choices: ["Engineer", "Intern", "I'm done adding team members"]
+      }
+  ]).then((answer) => {
+      switch (answer.role) {
+          case "Engineer":
+  // Ask questions specific to Engineer role
+              inquirer.prompt(engineerQuestions).then((engineerAnswers) => {
+  // Push engineer's answers to the array
+                  let engineer = new Engineer(engineerAnswers.name, engineerAnswers.id, engineerAnswers.email, engineerAnswers.github);
+                  team.push(engineer);
+                  // Ask the user which team member to add next
+                  askNext(team);
+              });
+              break;
+          case "Intern":
+              // Ask questions specific to Intern role
+              inquirer.prompt(InternQuestions).then((internAnswers) => {
+                  // Push intern's answers to the array
+                  let intern = new Intern(internAnswers.name, internAnswers.id, internAnswers.email, internAnswers.school);
+                  team.push(intern);
+                  // Ask the user which team member to add next
+                  askNext(team)
+              });
+              break;
+          case "I'm done adding team members":
+              // Use the answers to generate HTML content for the team page
+              const htmlContent = render(team);
+              // Create the output directory if it doesn't exist
+              if (!fs.existsSync(OUTPUT_DIR)) {
+                  fs.mkdirSync(OUTPUT_DIR);
+              };
+              try {
+                  // Write the HTML to a file
+                  fs.writeFileSync(outputPath, htmlContent);
+                  console.log("Successfully generated team member's page and saved to output folder.");
+              } catch (err) {
+                  console.log(err);
+              }
+              break;
+          default:
+              console.log("Invalid option selected");
+      }
+  })
+}
 
-//INQUIRER PROMPTS = GATHER ENGINEER INFO
-
-//results from inquirer query
-// const engineer1 = { name: '1', id: 1, email: '3@engineer.com', github: "engineer" };
-// const engineer2 = { name: '2', id: 2, email: 'e3@engineer.com', github: "engineer" };
-// const engineer3 = { name: '3', id: 2, email: '3@engineer.com', github: "engineer" };
-
-// //create an engineer class
-// const engineerClass1 = new Engineer(engineer1.name, engineer1.id, engineer1.email, engineer1.github);
-
-// const engineerClass2 = new Engineer(engineer2.name, engineer2.id, engineer2.email, engineer2.github);
-
-// const engineerClass3 = new Engineer(engineer3.name, engineer3.id, engineer3.email, engineer3.github);
-
-
-// let team = [];
-// team.push(engineerClass1);
-// team.push(engineerClass2);
-// team.push(engineerClass3);
-// console.log(team);
-
-// // console.log(engineerClass);
-// // console.log(engineerClass.getRole());
-
-// const html = render(team);
-// console.log(html);
