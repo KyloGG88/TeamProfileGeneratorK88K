@@ -11,6 +11,13 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 const render = require("./src/page-template.js");
 const { default: generate } = require("@babel/generator");
 
+function validateInput(value) {
+  if (value.trim().length > 0) {
+      return true;
+  }
+  return "Please enter a non-empty value.";
+}
+
 const team = [];
 
 const managerQuestions = [
