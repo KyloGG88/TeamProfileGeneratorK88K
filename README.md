@@ -112,6 +112,12 @@ https://www.geeksforgeeks.org/node-js-fs-writefilesync-method/
 
 Github Repo: [KyloGG88 Github](https://github.com/KyloGG88/TeamProfileGeneratorK88K)
 
+## Contributors
+
+***Steve Calla***
+
+Huge Thanks to Steve for assisting us with the thinking and first steps in this assignment.
+
 ## License
 
 Public - MIT License ![license](https://img.shields.io/badge/license-MIT-yellowgreen.svg)
