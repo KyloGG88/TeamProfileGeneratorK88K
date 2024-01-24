@@ -110,7 +110,7 @@ https://www.geeksforgeeks.org/node-js-fs-writefilesync-method/
 
 ## Links ![GitHub link](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)
 
-Github Repo ![KyloGG88 Github](https://github.com/KyloGG88/TeamProfileGeneratorK88K)
+Github Repo: [KyloGG88 Github](https://github.com/KyloGG88/TeamProfileGeneratorK88K)
 
 ## License
 
