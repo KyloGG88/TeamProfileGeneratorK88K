@@ -1,10 +1,4 @@
-# TeamProfileGeneratorK88K
-
-# Module 12 Object-Oriented Programming: Team Profile Generator
-
-## Your Task
-
-Your task is to take the given starter code and convert it into a working Node.js command-line application. This application will take in information about employees on a software engineering team, then generates an HTML webpage that displays summaries for each person. You have been provided with tests, so make sure every part of your code passes each provided test.
+# Module 12 Object-Oriented Programming: TeamProfileGeneratorK88K ![EDx](https://img.shields.io/badge/Edx-193A3E?style=for-the-badge&logo=edx&logoColor=white)
 
 ## User Story
 
@@ -63,80 +57,61 @@ As a manager a user want to generate a webpage that displays my team's basic inf
     * Write it to a file named `team.html` in the `output` folder. 
     * You can use the provided variable `outputPath` to target this location.
 
----
-
-## Mock-Up
-
-The following image shows a mock-up of the generated HTML’s appearance and functionality:
-
-![HTML webpage titled “My Team” features five boxes listing employee names, titles, and other key info.](./Assets/14-object-oriented-programming-challenge-demo.png)
-
-The styling in the image is just an example, so feel free to add your own.
-
----
-
 ## Getting Started
 
-This Challenge will combine many of the skills we've covered so far. In addition to the User Story and Acceptance Criteria, we’ve provided some guidelines to help get started.
-
-Your application should use [Jest](https://www.npmjs.com/package/jest) for running the unit tests and [Inquirer](https://www.npmjs.com/package/inquirer) for collecting input from the user. The application will be invoked by using the following command:
+This application uses [Jest](https://www.npmjs.com/package/jest) for running the unit tests and [Inquirer](https://www.npmjs.com/package/inquirer) for collecting input from the user. The application will be invoked by using the following command:
 
 ```bash
 node index.js
 ```
+## Results
 
----
+The following images shows the results of initiating the code (node index.js) and in the collection of user information for creating a team as well as the resulting HTML output (./output/team.html):
 
-## Hints
+* Terminal Questions
 
-* You will want to make your methods as pure as possible. This means try to make your methods simple so that they are easier to test.
+![Terminal Questions](./assets/TerminalQuestions.jpg)
 
-* The different employee types should all inherit some methods and properties from a base class of `Employee`.
- 
-* Be sure to test out each class and verify it generates an object with the correct structure and methods. This structure will be crucial in order for the provided `render` function to work!
-  
-* You may need to check if the `output` folder exists and create it if it does not.
+* Team HTML
 
----
+![Team HTML](./assets/TeamHTML.jpg)
 
-## Grading Requirements
+## Resources
 
-This Challenge is graded based on the following criteria: 
+***Node.js***
+*     https://nodejs.org/docs/latest/api/
+*     https://nodejs.org/en/learn/manipulating-files/writing-files-with-nodejs
+***NPMjs***
+*     https://www.npmjs.com/package/inquirer#inquirerpromptquestions-answers---promise
+***BabelJs***
+*     https://babeljs.io/docs/
+***HASHNode***
+*     https://hashnode.com/post/getting-user-input-in-nodejs-using-inquirerjs-ckynrlihg05k7fms1b8677f5r
+***JsPlainEnglish***
+*     https://javascript.plainenglish.io/how-to-inquirer-js-c10a4e05ef1f
+***LogRocket***
+*     https://blog.logrocket.com/using-writefilesync-node-js/
+***GeeksforGeeks***
+https://www.geeksforgeeks.org/node-js-fs-writefilesync-method/
+***StackOverflow***
+*     https://stackoverflow.com/questions/65189877/how-can-i-validate-that-a-user-input-their-email-when-using-inquirer-npm
+*     https://stackoverflow.com/questions/1344319/how-to-validate-input-using-javascript
+*     https://stackoverflow.com/questions/74854450/trying-to-goto-second-inquirer-prompt-depending-on-user-selection
+***jQuery***
+*     https://api.jquery.com/jQuery.get/
+***DigitalOcean***
+*     https://www.digitalocean.com/community/tutorials/nodejs-interactive-command-line-prompts
+***freeCodeCamp***
+*     https://www.freecodecamp.org/news/setup-babel-in-nodejs/
+***incleaf***
+*     https://incleaf.github.io/babel-5-docs/docs/usage/require/
 
-### Deliverables: 25%
 
-* A sample HTML file generated using the application must be submitted.
 
-* Your GitHub repository containing your application code.
+## Links ![GitHub link](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)
 
-### Technical Acceptance Criteria: 50%
+Github Repo ![KyloGG88 Github](https://github.com/KyloGG88/TeamProfileGeneratorK88K)
 
-* Satisfies all of the preceding acceptance criteria plus the following:
+## License
 
-	* Uses the [Inquirer package](https://www.npmjs.com/package/inquirer).
-
-	* All tests pass using the [Jest package](https://www.npmjs.com/package/jest).
-
-  * The application must have `Employee`, `Manager`, `Engineer`, and `Intern` classes.
-
-### Repository Quality: 25%
-
-* Repository has a unique name.
-
-* Repository follows best practices for file structure and naming conventions.
-
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages.
-
-* Repository contains a high-quality readme with description.
-
----
-
-## Review
-
-You are required to submit the following for review:
-
-* A sample HTML file generated using your application.
-
-* The URL of the GitHub repository, with a unique name and a readme describing the project.
+Public - MIT License ![license](https://img.shields.io/badge/license-MIT-yellowgreen.svg)
